@@ -78,6 +78,12 @@ function main() {
   echo "-----------------------"
   echo "Built: ${built[*]}"
   echo "Errored: ${errored[*]}"
+
+  if [ ${#errored[*]} -gt 0 ]; then
+    return 1
+  else
+    return 0
+  fi
 }
 
 main

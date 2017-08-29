@@ -1,6 +1,6 @@
 # Django items
 django==1.11.4
-django-environ==0.4.3
+django-environ==0.4.4
 django-bootstrap-breadcrumbs==0.8.2
 
 # Web serving

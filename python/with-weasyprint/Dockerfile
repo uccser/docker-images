@@ -14,9 +14,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Weasyprint dependencies
-RUN /docker_venv/bin/pip3 install -U pip setuptools
-RUN /docker_venv/bin/pip3 install packaging==16.8
-RUN /docker_venv/bin/pip3 install appdirs==1.4.3
-RUN /docker_venv/bin/pip3 install html5lib==1.0b9
-RUN /docker_venv/bin/pip3 install six==1.10.0
-RUN /docker_venv/bin/pip3 install weasyprint==0.36
+COPY requirements.txt /requirements.txt
+COPY pip-install.sh /pip-install.sh
+RUN chmod +x /pip-install.sh
+RUN /pip-install.sh /docker_venv/bin/pip3 /requirements.txt
+
+# Remove extra files
+RUN rm -f /requirements.txt
+RUN rm -f /pip-install.sh

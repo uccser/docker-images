@@ -15,7 +15,7 @@ RUN apt-get update \
     && apt-get -y --purge autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-ENV DJANGO_VERSION 1.11.4
+ENV DJANGO_VERSION 1.11.5
 
 COPY requirements.txt /requirements.txt
 RUN /docker_venv/bin/pip3 install -r /requirements.txt

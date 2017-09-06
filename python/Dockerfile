@@ -43,6 +43,7 @@ ENV PYTHONUNBUFFERED 1
 # Upgrade and install virtualenv
 RUN pip install --upgrade virtualenv
 RUN python -m virtualenv --python=python3.6 /docker_venv
+RUN /docker_venv/bin/pip3 install -U pip setuptools
 
 # Port 8080 is used by Google App Engine for serving HTTP traffic
 EXPOSE 8080

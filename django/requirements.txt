@@ -1,5 +1,5 @@
 # Django items
-django==1.11.5
+django==1.11.6
 django-environ==0.4.4
 django-bootstrap-breadcrumbs==0.8.2
 

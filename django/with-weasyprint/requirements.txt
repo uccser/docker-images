@@ -4,7 +4,7 @@ django-environ==0.4.4
 
 # Web serving
 gevent==1.2.2
-gunicorn==19.7.1
+gunicorn==19.8.0
 
 # Database APIs
 mysqlclient==1.3.12

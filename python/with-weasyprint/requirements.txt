@@ -1,6 +1,6 @@
 packaging==18.0
 appdirs==1.4.3
 html5lib==1.0.1
-six==1.11.0
+six==1.12.0
 pdfrw==0.4
-weasyprint==0.42.3
+weasyprint==44

@@ -16,4 +16,4 @@ This includes `VERSION` files within the `with-weasyprint` directories.
 
 To update repositories that use these Docker images, we need to update both the `Dockerfile` and `Dockerfile-local` files in the repository with the new version number.
 
-Note that if one of the core packages (Django, Nginx, Python) has a dependency that updates, the core package version number will not update (and doesn't need to be updated).
+Note: If one of the Docker images has a dependency that updates (for example: a database library within the Django image), the Docker image version number is not changed. It is only changed when the key dependency is changed.

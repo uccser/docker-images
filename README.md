@@ -12,7 +12,7 @@ The Docker images we currently use are:
 
 `pyup-bot` will create a pull request when a new version of a package becomes available.
 In addition to the changes `pyup-bot` makes, we will need to also update the `VERSION` files with the new version number for the relevant package.
-This includes `VERSION` files under the `with-weasyprint` directory.
+This includes `VERSION` files within the `with-weasyprint` directories.
 
 To update projects that use these Docker images, we need to update both the `Dockerfile` and `Dockerfile-local` files in the project with the new version number.
 

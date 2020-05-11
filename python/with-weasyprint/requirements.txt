@@ -1,5 +1,5 @@
 packaging==20.3
-appdirs==1.4.3
+appdirs==1.4.4
 html5lib==1.0.1
 six==1.14.0
 pdfrw==0.4

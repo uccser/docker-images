@@ -1,4 +1,4 @@
-FROM python:3.6.8-stretch
+FROM python:3.8.3-buster
 
 # Install packages that are common dependencies for python packages
 RUN apt-get update \
@@ -9,29 +9,6 @@ RUN apt-get update \
         pkg-config \
         wget \
         build-essential \
-        libcurl4-openssl-dev \
-        libffi-dev \
-        libjpeg-dev \
-        default-libmysqlclient-dev \
-        libpng-dev \
-        libpq-dev \
-        libssl-dev \
-        libxml2-dev \
-        libxslt1-dev \
-        swig \
-        zlib1g-dev \
-        gfortran \
-        libatlas-dev \
-        libblas-dev \
-        libfreetype6-dev \
-        liblapack-dev \
-        libquadmath0 \
-        libmemcached-dev \
-        libsasl2-2 \
-        libsasl2-dev \
-        libsasl2-modules \
-        sasl2-bin \
-        python-cffi \
       --no-install-recommends --no-install-suggests \
     && apt-get -y --purge autoremove \
     && rm -rf /var/lib/apt/lists/*
@@ -42,7 +19,7 @@ ENV PYTHONUNBUFFERED 1
 
 # Upgrade and install virtualenv
 RUN pip install --upgrade virtualenv
-RUN python -m virtualenv --python=python3.6 /docker_venv
+RUN python -m virtualenv --python=python3.8 /docker_venv
 RUN /docker_venv/bin/pip3 install -U pip setuptools
 
 # Port 8080 is used by Google App Engine for serving HTTP traffic

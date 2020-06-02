@@ -1,4 +1,4 @@
-FROM uccser/python:3.6.8-stretch
+FROM uccser/python:buster-3.8.3-python
 
 ARG DEBIAN_FRONTEND=noninteractive
 

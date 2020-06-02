@@ -1,4 +1,4 @@
-FROM uccser/python:3.6.8-stretch-with-weasyprint
+FROM uccser/python:buster-3.8.3-python-with-weasyprint
 
 ARG DEBIAN_FRONTEND=noninteractive
 

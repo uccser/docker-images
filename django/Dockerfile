@@ -6,8 +6,6 @@ RUN apt-get update \
     && apt-get install -y \
         gcc \
         gettext \
-        mysql-client \
-        default-libmysqlclient-dev \
         postgresql-client \
         libpq-dev \
         sqlite3 \

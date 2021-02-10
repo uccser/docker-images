@@ -11,7 +11,8 @@ RUN apt-get update \
         mercurial \
         pkg-config \
         wget \
-        build-essential \ gcc \
+        build-essential \
+        gcc \
         gettext \
         postgresql-client \
         libpq-dev
@@ -28,7 +29,7 @@ ENV PORT 8080
 
 # Upgrade and install virtualenv
 RUN pip install --upgrade virtualenv
-RUN python -m virtualenv --python=python3.8 /docker_venv
+RUN python -m virtualenv /docker_venv
 RUN /docker_venv/bin/pip3 install -U pip setuptools
 
 # Install basic Django requirements

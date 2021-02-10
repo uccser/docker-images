@@ -1,19 +1,3 @@
 # Docker images
 
-A collection of Docker images available on [Docker Hub](https://hub.docker.com/u/uccser/) used by the University of Canterbury Computer Science Education Research group.
-
-The Docker images we currently use are:
-
-    - Django
-    - Nginx-with-gulp
-    - Python
-
-## How to update packages
-
-`pyup-bot` will create a pull request when a new version of a package becomes available.
-In addition to the changes `pyup-bot` makes, we will need to also update the `VERSION` files with the new version number for the relevant package.
-This includes `VERSION` files within the `with-weasyprint` directories.
-
-To update repositories that use these Docker images, we need to update both the `Dockerfile` and `Dockerfile-local` files in the repository with the new version number.
-
-Note: If one of the Docker images has a dependency that updates (for example: a database library within the Django image), the Docker image version number is not changed. It is only changed when the key dependency is changed.
+This repository produces Docker images used by the University of Canterbury Computer Science Education Research group.

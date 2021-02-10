@@ -1,3 +1,5 @@
+# Currently not updated
+
 FROM nginx:1.15.8
 
 # Install Node.js and other dependencies

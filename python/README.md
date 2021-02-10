@@ -1,1 +1,0 @@
-A docker image setup with Python 3 with packages for popular python libraries. Built for Google App Engine Flexible, Google Container Engine and other Docker hosts and intended to be similar to `gcr.io/google-appengine/python` but running different base images and Python versions for compatibility.

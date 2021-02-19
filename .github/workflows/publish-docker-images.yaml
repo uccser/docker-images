@@ -28,5 +28,5 @@ jobs:
         accessToken: ${{ secrets.PUBLISH_DOCKER_IMAGES_PAT }}
         containerRegistry: true
         context: django-with-weasyprint/
-        imageName: django-with-weasyprint
-        tag: '2.2.18'
+        imageName: django
+        tag: '2.2.18-with-weasyprint'

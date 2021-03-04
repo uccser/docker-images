@@ -15,7 +15,12 @@ RUN apt-get update \
         gcc \
         gettext \
         postgresql-client \
-        libpq-dev
+        libpq-dev \
+        # For installing common Python cryptography package
+        libssl-dev \
+        libffi-dev \
+        python3-dev \
+        cargo
 
 # Setup PYTHON environment variables to fix locale issues and logging speed
 ENV LANG C.UTF-8

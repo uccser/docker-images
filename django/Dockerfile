@@ -22,6 +22,21 @@ RUN apt-get update \
         python3-dev \
         cargo
 
+# Install WeasyPrint dependencies
+RUN apt-get update \
+    && apt-get install -y \
+        python3-dev \
+        python3-pip \
+        python3-setuptools \
+        python3-wheel \
+        python3-cffi \
+        libcairo2 \
+        libpango-1.0-0 \
+        libpangocairo-1.0-0 \
+        libgdk-pixbuf2.0-0 \
+        libffi-dev \
+        shared-mime-info
+
 # Setup PYTHON environment variables to fix locale issues and logging speed
 ENV LANG C.UTF-8
 
@@ -32,12 +47,19 @@ ENV PYTHONUNBUFFERED 1
 EXPOSE 8080
 ENV PORT 8080
 
+# Create non-root user and set working directory
+RUN groupadd --gid 1000 uccser && useradd --uid 1000 --gid uccser --shell /bin/bash --create-home uccser
+RUN mkdir /app && chown -R uccser:uccser /app
+RUN mkdir /docker_venv && chown -R uccser:uccser /docker_venv
+WORKDIR /app
+USER uccser
+
 # Upgrade and install virtualenv
 RUN pip install --upgrade virtualenv
 RUN python -m virtualenv /docker_venv
 RUN /docker_venv/bin/pip3 install -U pip setuptools
 
-# Install basic Django requirements
-COPY requirements.txt /requirements.txt
-RUN /docker_venv/bin/pip3 install -r /requirements.txt
-RUN rm -f /requirements.txt
+# Install Python dependencies into virtualenv
+COPY --chown=uccser:uccser requirements.txt requirements.txt
+RUN /docker_venv/bin/pip3 install -r requirements.txt
+RUN rm requirements.txt

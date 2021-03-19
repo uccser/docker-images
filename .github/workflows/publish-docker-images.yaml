@@ -20,13 +20,4 @@ jobs:
         containerRegistry: true
         context: django/
         imageName: django
-        tag: '2.2.18'
-
-    - name: Publish Django with WeasyPrint Docker image
-      uses: matootie/github-docker@v3.1.0
-      with:
-        accessToken: ${{ secrets.PUBLISH_DOCKER_IMAGES_PAT }}
-        containerRegistry: true
-        context: django-with-weasyprint/
-        imageName: django
-        tag: '2.2.18-with-weasyprint'
+        tag: '2.2.19-1'

@@ -4,7 +4,7 @@ django-environ==0.4.5
 
 # Web serving
 gunicorn==20.0.4
-gevent==21.1.2
+gevent==23.9.1
 
 # Database APIs
 psycopg2==2.8.6
